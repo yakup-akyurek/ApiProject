@@ -11,6 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 
+builder.Services.AddScoped<IProductDal, EfProductDal>();
+builder.Services.AddScoped<IProductService, ProductManager>();
+
 builder.Services.AddDbContext<ApiContext>();
 
 builder.Services.AddControllers();

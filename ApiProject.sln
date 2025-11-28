@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiProject.EntityLayer", "ApiProject.EntityLayer\ApiProject.EntityLayer.csproj", "{B52579CA-1292-45E6-82AC-9C0AEE82903E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiProject.EntityLayer", "ApiProject.EntityLayer\ApiProject.EntityLayer.csproj", "{B52579CA-1292-45E6-82AC-9C0AEE82903E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiProject.DataAccessLayer", "ApiProject.DataAccessLayer\ApiProject.DataAccessLayer.csproj", "{E91C8CD8-E526-4A4E-AB0F-8E13B0D1BD6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiProject.DataAccessLayer", "ApiProject.DataAccessLayer\ApiProject.DataAccessLayer.csproj", "{E91C8CD8-E526-4A4E-AB0F-8E13B0D1BD6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiProject.BusinessLayer", "ApiProject.BusinessLayer\ApiProject.BusinessLayer.csproj", "{2E500B70-27D2-4A94-B0E6-648731D099B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiProject.BusinessLayer", "ApiProject.BusinessLayer\ApiProject.BusinessLayer.csproj", "{2E500B70-27D2-4A94-B0E6-648731D099B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiProject.WebApi", "ApiProject.WebApi\ApiProject.WebApi.csproj", "{73260025-0CA5-4585-96FF-CF8400065921}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiProject.WebApi", "ApiProject.WebApi\ApiProject.WebApi.csproj", "{73260025-0CA5-4585-96FF-CF8400065921}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiProject.DtoLayer", "ApiProject.DtoLayer\ApiProject.DtoLayer.csproj", "{42571A41-768A-4809-87F9-145839ED47D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiProject.WebUI", "ApiProject.WebUI\ApiProject.WebUI.csproj", "{A667B033-BC20-4BCC-8585-AEA02DC4973E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{73260025-0CA5-4585-96FF-CF8400065921}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73260025-0CA5-4585-96FF-CF8400065921}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73260025-0CA5-4585-96FF-CF8400065921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42571A41-768A-4809-87F9-145839ED47D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42571A41-768A-4809-87F9-145839ED47D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42571A41-768A-4809-87F9-145839ED47D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42571A41-768A-4809-87F9-145839ED47D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A667B033-BC20-4BCC-8585-AEA02DC4973E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A667B033-BC20-4BCC-8585-AEA02DC4973E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A667B033-BC20-4BCC-8585-AEA02DC4973E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A667B033-BC20-4BCC-8585-AEA02DC4973E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

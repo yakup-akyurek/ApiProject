@@ -9,5 +9,7 @@ namespace ApiProject.BusinessLayer.Abstract
 {
     public interface ICategoryService:IGenericService<Category>
     {
+
+        public int TCategoryCount();
     }
 }
