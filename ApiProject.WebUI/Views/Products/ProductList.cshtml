@@ -1,0 +1,43 @@
+﻿@model List<ApiProject.WebUI.Dtos.ResultProductDto>
+@{
+    Layout = null;
+}
+@* <a href="~/lib/bootstrap/dist/css/bootstrap.css.map">~/lib/bootstrap/dist/css/bootstrap.css.map</a>
+<a href="~/lib/bootstrap/dist/css/bootstrap.min.css.map">~/lib/bootstrap/dist/css/bootstrap.min.css.map</a>
+<a href="~/lib/bootstrap/dist/css/bootstrap.rtl.css.map">~/lib/bootstrap/dist/css/bootstrap.rtl.css.map</a>
+<a href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map">~/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map</a> *@
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+@* <link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" /> *@
+
+<div class="container">
+
+    <table class="table table-hover">
+        <tr>
+            <th>#</th>
+            <th>ürün adı</th>
+            <th>stok sayısı</th>
+            <th>fiyat</th>
+            <th>kategori</th>
+            <th>sil</th>
+            <th>güncelle</th>
+        </tr>
+
+        @foreach(var item in Model){
+            <tr>
+            <td>@item.ProductId</td>
+            <td>@item.ProductName</td>
+            <td>@item.ProductStock</td>
+            <td>@item.ProductPrice</td>
+            <td>@item.CategoryId</td>
+            <td><a href="/Products/DeleteProduct/@item.ProductId" class="btn btn-danger">sil</a></td>
+            <td><a href="/Products/UpdateProduct/@item.ProductId" class="btn btn-danger">güncelle</a></td>
+            </tr>
+        }
+
+
+    </table>
+    <a href="/Products/CreateProduct" class="btn btn-success">yeni ürün girişi</a>
+
+</div>

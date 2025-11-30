@@ -14,6 +14,7 @@ namespace ApiProject.WebUI.Controllers
             _httpClientFactory = httpClientFactory;
         }
 
+
         public async Task<IActionResult> CategoryList()
         {
 
@@ -21,11 +22,57 @@ namespace ApiProject.WebUI.Controllers
             var responseMessage = await client.GetAsync("https://localhost:7100/api/Category");//apiye istek attık
             if (responseMessage.IsSuccessStatusCode)//istek başarılı ise
             {
-               var jsonData=await responseMessage.Content.ReadAsStringAsync();//istekte bulunan datayı jsondan string çevirdik
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();//istekte bulunan datayı jsondan string çevirdik
                 var values = JsonConvert.DeserializeObject<List<ResultCategoryDto>>(jsonData);//string datayı dtoya çevirdik
                 return View(values);
             }
             return View();//başarısız ise boş view döndük
         }
+
+
+
+        [HttpGet]
+        public IActionResult CreateCategory()
+        {
+            return View();   // CreateCategory.cshtml
+        }
+
+
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> CreateCategory(CreateCategoryDto createCategoryDto)
+        {
+            var client = _httpClientFactory.CreateClient();//httpclientfactory ile client oluşturduk
+
+            var responseMessage = await client.PostAsJsonAsync(
+                "https://localhost:7100/api/Category",
+                createCategoryDto);//apiye post isteği attık
+
+            if (responseMessage.IsSuccessStatusCode)//istek başarılı ise
+            {
+                return RedirectToAction("CategoryList");
+            }
+
+            var error = await responseMessage.Content.ReadAsStringAsync();//hata mesajını okuduk
+            ModelState.AddModelError("", $"API hata döndü: {responseMessage.StatusCode} - {error}");//modelstate e hata ekledik
+
+            return View(createCategoryDto);//başarısız ise aynı view e dto ile geri döndük
+        }
+
+
+        public IActionResult DeleteCategory(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = client.DeleteAsync("https://localhost:7100/api/Category?id=" + id);//apiye delete isteği attık
+            if (responseMessage.Result.IsSuccessStatusCode)//istek başarılı ise
+            {
+                return RedirectToAction("CategoryList");//kategori listesine yönlendirdik
+            }
+            return View();
+        }
+
+
     }
 }

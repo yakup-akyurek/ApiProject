@@ -1,0 +1,31 @@
+﻿@model ApiProject.WebUI.Dtos.CreateProductDto
+@{
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+
+    <form method="post">
+        <label>ürün adı</label>
+        <input type="text" asp-for="ProductName" class="form-control" />
+
+        <label>ürün fiyatı</label>
+        <input type="text" asp-for="ProductPrice" class="form-control" />
+
+        <label>ürün stok</label>
+        <input type="text" asp-for="ProductStock" class="form-control" />
+
+        <label>ürün kategori</label>
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
+
+
+
+
+
+        <button class="btn btn-primary"> kategoriyi ekle</button>
+
+    </form>
+
+
+
+</div>

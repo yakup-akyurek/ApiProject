@@ -1,11 +1,48 @@
 ﻿@model List<ApiProject.WebUI.Dtos.ResultCategoryDto>
 @{
     Layout = null;
-}
+}@* <a href="~/lib/bootstrap/dist/css/bootstrap.css.map">~/lib/bootstrap/dist/css/bootstrap.css.map</a>
+<a href="~/lib/bootstrap/dist/css/bootstrap.min.css.map">~/lib/bootstrap/dist/css/bootstrap.min.css.map</a>
+<a href="~/lib/bootstrap/dist/css/bootstrap.rtl.css.map">~/lib/bootstrap/dist/css/bootstrap.rtl.css.map</a>
+<a href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map">~/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map</a> *@
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+@* <link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" /> *@
 
-@foreach (var item in Model)
-{
-    <p>@item.categoryId - @item.categoryName</p>
-}
+<div class="container">
+
+    <table class="table table-bordered">
+       
+            <tr>
+                <th>kategori id</th>
+                <th>kategori adı</th>
+                <th>sil</th>
+                <th>güncelle</th>
+            </tr>
+        
+
+   
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.categoryId</td>
+            <td>@item.categoryName</td>
+            <td><a href="/Categories/DeleteCategory/@item.categoryId/" class="btn btn-danger">sil</a></td>
+            <td><a href="/Categories/UpdateCategory/@item.categoryId/" class="btn btn-success">güncelle</a></td>
+
+        </tr>
+    }
+
+    </table>
+
+    <a href="/Categories/CreateCategory" class="btn btn-primary">yeni kategori ekle</a>
+
+
+
+
+</div>
+
 
 
